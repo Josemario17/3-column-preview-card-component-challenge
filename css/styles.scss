@@ -46,7 +46,7 @@ body{
 
 main{
     width: 65%;
-    height: 53%;
+    height: 50%;
     margin: 0 auto;
     @include center(center, center);
     @media ($max-width ) {
