@@ -1,0 +1,136 @@
+
+@mixin center($alig, $justify){
+    display: flex;
+    align-items: $alig;
+    justify-content: $justify;
+}
+
+$max-width: "max-width: 1000px";
+
+@font-face {
+    font-family: font1;
+    src: url('../fonts/LexendDeca-Medium.ttf');
+    font-size: 15px;
+}
+
+@font-face {
+    font-family: font2;
+    src: url('../fonts/BigShouldersDisplay-Medium.ttf');
+    font-size: 15px;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: font1;
+    color:  hsla(0, 0%, 100%, 0.75);
+}
+ 
+body{
+    width: 100%;
+    min-width: 375px;
+    max-width: 1440px;
+    height: 100vh;
+    max-height: 100%;
+    background-color: hsl(0, 0%, 95%);
+    @include center(center, center);
+    @media ($max-width) {
+        height: 100%;
+        margin: 5% auto;
+    }
+}
+
+
+main{
+    width: 65%;
+    height: 53%;
+    margin: 0 auto;
+    @include center(center, center);
+    @media ($max-width ) {
+        flex-wrap: wrap;
+    }
+}
+
+.main__element{
+    width: 100%;
+    height: 100%;
+    padding: 6% 4%;
+
+    @media ($max-width) {
+        padding: 10% 8%;
+    }
+    &:nth-child(1){
+        background-color: hsl(31, 77%, 52%);
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+
+        a{
+            color: hsl(31, 77%, 52%);
+        }
+        @media ($max-width) {
+            padding-bottom: 50px;
+            border-top-right-radius: 12px;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &:nth-child(2){
+        background-color: hsl(184, 100%, 22%);
+    
+        a{
+            color: hsl(184, 100%, 22%);
+        }
+
+        @media ($max-width) {
+            padding-bottom: 50px;
+        }
+    }
+
+    &:nth-child(3){
+        background-color: hsl(179, 100%, 13%);
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+
+        a{
+            color: hsl(179, 100%, 13%);
+        }
+
+        @media ($max-width) {
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 12px;
+            padding-bottom: 50px;
+        }
+    }
+}
+
+h2{
+    color: hsl(0, 0%, 95%);
+    font-family: font2;
+    text-transform: uppercase;
+    margin: 15% 0;
+    font-size: 2.3em;
+    letter-spacing: 2px;
+}
+
+p{
+    width: 90%;
+    line-height: 27px;
+    opacity: 75%;
+    font-size: 15px;
+}
+
+a{
+    display: block;
+    width: 65%;
+    height: 50px;
+    border-radius: 30px;
+    background-color: hsl(0, 0%, 95%);
+    margin: 70px 0 0 0;
+    @include center(center, center);
+    color: inherit;
+    text-decoration: none;
+}
+
